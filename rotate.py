@@ -24,7 +24,7 @@ print("Found " + str(file_count) + " S3 files")
 
 earliest = min(files, key=lambda k: k['LastModified'])
 
-if (file_count < int(limit)):
+if (file_count < (int(limit) + 1)):
     print("Would delete %s if count was more than %d" % (earliest['Key'], limit))
 else:
     print("Deleting " + str(earliest['Key']))
